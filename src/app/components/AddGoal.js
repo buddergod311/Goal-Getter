@@ -10,7 +10,7 @@ const AddGoal = () => {
   const [name, setName] = useState('');
   const [img, setImg] = useState('');
   const [desc, setDesc] = useState('');
-  const [days, setDays] = useState('');
+  const [days, setDays] = useState(['off', 'off', 'off', 'off', 'off', 'off', 'off']);
 
   const nameChangeHandler = (event) => {
     setName(event.target.value);
@@ -21,8 +21,47 @@ const AddGoal = () => {
   const descChangeHandler = (event) => {
     setDesc(event.target.value);
   };
-  const daysChangeHandler = (event) => {
-    setDays(event.target.value);
+  const sundayChangeHandler = (event) => {
+    setDays((prevDays) => {
+      prevDays[0] = event.target.value;
+      return (prevDays);
+    })
+  };
+  const mondayChangeHandler = (event) => {
+    setDays((prevDays) => {
+      prevDays[1] = event.target.value;
+      return (prevDays);
+    })
+  };
+  const tuesdayChangeHandler = (event) => {
+    setDays((prevDays) => {
+      prevDays[2] = event.target.value;
+      return (prevDays);
+    })
+  };
+  const wednesdayChangeHandler = (event) => {
+    setDays((prevDays) => {
+      prevDays[3] = event.target.value;
+      return (prevDays);
+    })
+  };
+  const thursdayChangeHandler = (event) => {
+    setDays((prevDays) => {
+      prevDays[4] = event.target.value;
+      return (prevDays);
+    })
+  };
+  const fridayChangeHandler = (event) => {
+    setDays((prevDays) => {
+      prevDays[5] = event.target.value;
+      return (prevDays);
+    })
+  };
+  const saturdayChangeHandler = (event) => {
+    setDays((prevDays) => {
+      prevDays[6] = event.target.value;
+      return (prevDays);
+    })
   };
 
   const router = useRouter();
@@ -69,11 +108,40 @@ const AddGoal = () => {
           type="text"
           onChange={imgChangeHandler}
         />
-        <label>Days</label>
+        <label>Sunday</label>
          <input
-          value={days}
-          type="text"
-          onChange={daysChangeHandler}
+          type="checkbox"
+          onChange={sundayChangeHandler}
+        />
+        <label>Monday</label>
+         <input
+          type="checkbox"
+          onChange={mondayChangeHandler}
+        />
+        <label>Tuesday</label>
+         <input
+          type="checkbox"
+          onChange={tuesdayChangeHandler}
+        />
+        <label>Wednesday</label>
+         <input
+          type="checkbox"
+          onChange={wednesdayChangeHandler}
+        />
+        <label>Thursday</label>
+         <input
+          type="checkbox"
+          onChange={thursdayChangeHandler}
+        />
+        <label>Friday</label>
+         <input
+          type="checkbox"
+          onChange={fridayChangeHandler}
+        />
+        <label>Saturday</label>
+         <input
+          type="checkbox"
+          onChange={saturdayChangeHandler}
         />
         <Button type="submit">Submit</Button>
       </form>
