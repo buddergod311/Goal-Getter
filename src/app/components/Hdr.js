@@ -5,7 +5,7 @@ import './Hdr.css';
 const Hdr = (props) => {
   return (
     <div className="hdr">
-     <h1>{props.children}</h1>
+     {props.children}
     </div>
   );
 };

@@ -8,7 +8,7 @@ function Home() {
 
   return (
     <div>
-      <Hdr>Create new Goal</Hdr>
+      <Hdr><h1>Create new Goal</h1></Hdr>
       <AddGoal />
     </div>
   );

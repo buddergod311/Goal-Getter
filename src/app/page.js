@@ -1,14 +1,13 @@
 'use client'
-import { useState } from 'react';
-import UsersList from './components/GoalList';
-import AddUser from './components/AddGoal';
 import Hdr from './components/Hdr';
 import Title from './components/Title';
+import Link from 'next/link';
+import Button from './components/Button';
 
 function Home() {
   return (
     <div>
-      <Hdr>Goal Getter</Hdr>
+      <Hdr><h1>Goal Getter</h1><Button><Link href='/dashboard'>Log in</Link></Button></Hdr>
       <Title />
     </div>
   );

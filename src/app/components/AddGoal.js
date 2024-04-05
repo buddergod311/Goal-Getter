@@ -108,42 +108,48 @@ const AddGoal = () => {
           type="text"
           onChange={imgChangeHandler}
         />
-        <label>Sunday</label>
-         <input
-          type="checkbox"
-          onChange={sundayChangeHandler}
-        />
-        <label>Monday</label>
-         <input
-          type="checkbox"
-          onChange={mondayChangeHandler}
-        />
-        <label>Tuesday</label>
-         <input
-          type="checkbox"
-          onChange={tuesdayChangeHandler}
-        />
-        <label>Wednesday</label>
-         <input
-          type="checkbox"
-          onChange={wednesdayChangeHandler}
-        />
-        <label>Thursday</label>
-         <input
-          type="checkbox"
-          onChange={thursdayChangeHandler}
-        />
-        <label>Friday</label>
-         <input
-          type="checkbox"
-          onChange={fridayChangeHandler}
-        />
-        <label>Saturday</label>
-         <input
-          type="checkbox"
-          onChange={saturdayChangeHandler}
-        />
-        <Button type="submit">Submit</Button>
+        <div className='days'>
+          <label>Sunday</label>
+          <label>Monday</label>
+          <label>Tuesday</label>
+          <label>Wednesday</label>
+          <label>Thursday</label>
+          <label>Friday</label>
+          <label>Saturday</label>
+        </div>
+        <div className='buttons'>
+          <input
+            type="checkbox"
+            onChange={sundayChangeHandler}
+          />
+          <input
+            type="checkbox"
+            onChange={mondayChangeHandler}
+          />
+          <input
+            type="checkbox"
+            onChange={tuesdayChangeHandler}
+          />
+          <input
+            type="checkbox"
+            onChange={wednesdayChangeHandler}
+          />
+          <input
+            type="checkbox"
+            onChange={thursdayChangeHandler}
+          />
+          <input
+            type="checkbox"
+            onChange={fridayChangeHandler}
+          />
+          <input
+            type="checkbox"
+            onChange={saturdayChangeHandler}
+          />
+        </div>
+        <div className='submitButton'>
+          <Button type="submit">Submit</Button>
+        </div>
       </form>
     </Card>
   );

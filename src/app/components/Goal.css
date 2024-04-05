@@ -2,7 +2,6 @@
 .user-item a:active {
   background: #ffd900;
 }
-.user-item { display: flex;}
 
 .user-content {
   padding: 0;
@@ -36,4 +35,17 @@
 
 .user-item__info h3 {
   margin: 0;
+}
+
+.goal {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 5px;
+}
+
+.day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
