@@ -41,11 +41,13 @@ function Home() {
 
   return (
     <div>
+      <header>
         <Hdr><h1>Dashboard</h1> <Button><Link href='/'>Log out</Link></Button></Hdr>
-        <UsersList items={users} />
-        <div className='footerButton'>
-          <Button><Link href='/create-item'>+ New Goal</Link></Button>
-        </div>
+      </header>
+      <UsersList items={users} />
+      <div className='footerButton'>
+        <Button><Link href='/create-item'>+ New Goal</Link></Button>
+      </div>
     </div>
   );
 }

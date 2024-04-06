@@ -3,12 +3,17 @@ import Hdr from './components/Hdr';
 import Title from './components/Title';
 import Link from 'next/link';
 import Button from './components/Button';
+import './page.css';
 
 function Home() {
   return (
     <div>
-      <Hdr><h1>Goal Getter</h1><Button><Link href='/dashboard'>Log in</Link></Button></Hdr>
-      <Title />
+      <div className='pageTitle'>
+        <Title />
+      </div>
+      <footer>
+        <Hdr className='footer'><h1>Goal Getter</h1><Button><Link href='/dashboard'>Log in</Link></Button></Hdr>
+      </footer>
     </div>
   );
 }
