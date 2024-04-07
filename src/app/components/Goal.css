@@ -48,4 +48,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 60%;
+  width: 80%;
+}
+
+.goalGridItem {
+  display:flex;
+  align-items: center;
 }
