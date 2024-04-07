@@ -5,6 +5,7 @@ import Hdr from './../components/Hdr';
 import Link from 'next/link';
 import Button from './../components/Button';
 import './page.css';
+import Card from './../components/Card'
 
 function Home() {
   const DUMMY_LIST = [
@@ -44,10 +45,22 @@ function Home() {
       <header>
         <Hdr><h1>Dashboard</h1> <Button><Link href='/'>Log out</Link></Button></Hdr>
       </header>
-      <UsersList items={users} />
-      <div className='footerButton'>
-        <Button><Link href='/create-item'>+ New Goal</Link></Button>
-      </div>
+      <Card>
+        <div className='daysHeader'>
+          <p></p>
+          <p>Sunday</p>
+          <p>Monday</p>
+          <p>Tuesday</p>
+          <p>Wednesday</p>
+          <p>Thursday</p>
+          <p>Friday</p>
+          <p>Saturday</p>
+        </div>
+        <UsersList items={users} />
+        <div className='footerButton'>
+          <Button><Link href='/create-item'>+ New Goal</Link></Button>
+        </div>
+      </Card>
     </div>
   );
 }

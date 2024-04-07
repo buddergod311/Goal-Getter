@@ -16,25 +16,25 @@ const Goal = props => {
                     <h3>{props.desc} </h3>
                 </div>
                 <div className='goalGridItem'>
-                    {props.days[0] == 'on' ? <Card className='day'><Checkbox>Sunday</Checkbox></Card> : <Card className='day'>Sunday</Card>}
+                    {props.days[0] == 'on' ? <Card className='day'><Checkbox /></Card> : <Card className='day' />}
                 </div>
                 <div className='goalGridItem'>
-                    {props.days[1] == 'on' ? <Card className='day'><Checkbox>Monday</Checkbox></Card> : <Card className='day'>Monday</Card>}
+                    {props.days[1] == 'on' ? <Card className='day'><Checkbox /></Card> : <Card className='day' />}
                 </div>
                 <div className='goalGridItem'>
-                    {props.days[2] == 'on' ? <Card className='day'><Checkbox>Tuesday</Checkbox></Card> : <Card className='day'>Tuesday</Card>}
+                    {props.days[2] == 'on' ? <Card className='day'><Checkbox /></Card> : <Card className='day' />}
                 </div>
                 <div className='goalGridItem'>
-                    {props.days[3] == 'on' ? <Card className='day'><Checkbox>Wednesday</Checkbox></Card> : <Card className='day'>Wednesday</Card>}
+                    {props.days[3] == 'on' ? <Card className='day'><Checkbox /></Card> : <Card className='day' />}
                 </div>
                 <div className='goalGridItem'>
-                    {props.days[4] == 'on' ? <Card className='day'><Checkbox>Thursday</Checkbox></Card> : <Card className='day'>Thursday</Card>}
+                    {props.days[4] == 'on' ? <Card className='day'><Checkbox /></Card> : <Card className='day' />}
                 </div>
                 <div className='goalGridItem'>
-                    {props.days[5] == 'on' ? <Card className='day'><Checkbox>Friday</Checkbox></Card> : <Card className='day'>Friday</Card>}
+                    {props.days[5] == 'on' ? <Card className='day'><Checkbox /></Card> : <Card className='day' />}
                 </div>
                 <div className='goalGridItem'>
-                    {props.days[6] == 'on' ? <Card className='day'><Checkbox>Saturday</Checkbox></Card> : <Card className='day'>Saturday</Card>}
+                    {props.days[6] == 'on' ? <Card className='day'><Checkbox /></Card> : <Card className='day' />}
                 </div>
             </div>
         </li>

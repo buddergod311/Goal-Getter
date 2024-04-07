@@ -4,7 +4,7 @@ import Goal from './Goal';
 
 const GoalList = (props) => {
   return (
-    <Card className='users'>
+    <div>
       {props.items.map((goal) =>
         <Goal
           key={goal.id}
@@ -14,7 +14,7 @@ const GoalList = (props) => {
           days={goal.days}
         />
       )}
-    </Card>
+    </div>
   );
 }
 
