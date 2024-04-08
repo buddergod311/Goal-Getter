@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Button from './../components/Button';
 import './page.css';
 import Card from './../components/Card'
+import { useRouter } from 'next/navigation'
 
 function Home() {
   const DUMMY_LIST = [
@@ -32,6 +33,8 @@ function Home() {
     }
   ];
 
+  const router = useRouter();
+
   const [users, setUsers] = useState(DUMMY_LIST);
   
   const addGoalHandler = (goal) => {
@@ -40,11 +43,19 @@ function Home() {
     });
   };
 
+  const logOut = (event) => {
+    event.preventDefault();
+    router.push('./');
+  }
+
+  const addItem = (event) => {
+    event.preventDefault();
+    router.push('./create-item');
+  }
+
   return (
     <div>
-      <header>
-        <Hdr><h1>Dashboard</h1> <Button><Link href='/'>Log out</Link></Button></Hdr>
-      </header>
+      <Hdr><h1>Dashboard</h1> <Button onClick={logOut}>Log Out</Button></Hdr>
       <Card>
         <div className='daysHeader'>
           <p></p>
@@ -58,7 +69,7 @@ function Home() {
         </div>
         <UsersList items={users} />
         <div className='footerButton'>
-          <Button><Link href='/create-item'>+ New Goal</Link></Button>
+          <Button onClick={addItem}>+ New Goal</Button>
         </div>
       </Card>
     </div>
