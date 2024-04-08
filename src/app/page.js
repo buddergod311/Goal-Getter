@@ -4,7 +4,6 @@ import Title from './components/Title';
 import Button from './components/Button';
 import './page.css';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
 
 function Home() {
 
@@ -15,14 +14,22 @@ function Home() {
     router.push('./dashboard');
   }
 
+  const example = (event) => {
+    event.preventDefault();
+    router.push('./example');
+  }
+
   return (
     <div>
+      <header>
+        <Hdr><h1>Goal Getter</h1><Button onClick={logIn}>Log In</Button></Hdr>
+      </header>
       <div className='pageTitle'>
         <Title />
       </div>
-      <header>
-        <Hdr className='footer'><h1>Goal Getter</h1><Button onClick={logIn}>Log In</Button></Hdr>
-      </header>
+      <footer>
+        <Hdr><Button onClick={example}>See an Example</Button></Hdr>
+      </footer>
     </div>
   );
 }

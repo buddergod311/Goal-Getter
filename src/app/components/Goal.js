@@ -21,7 +21,7 @@ const Goal = props => {
                     <h3>{props.desc} </h3>
                 </div>
                 <div className='goalGridItem'>
-                    {props.days[0] == 'on' ? <Card className='day'><Checkbox day={0} comp={completion} setComp={setCompletion} checked={completion[0]}/></Card> : <Card className='day' />}
+                    {props.days[0] == 'on' ? <Card className='day'><Checkbox day={0} comp={completion} setComp={setCompletion}/></Card> : <Card className='day' />}
                 </div>
                 <div className='goalGridItem'>
                     {props.days[1] == 'on' ? <Card className='day'><Checkbox day={1} comp={completion} setComp={setCompletion} checked={completion[1]}/></Card> : <Card className='day' />}

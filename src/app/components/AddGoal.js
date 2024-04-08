@@ -119,31 +119,31 @@ const AddGoal = () => {
         </div>
         <div className='buttons'>
           <input
-            type="checkbox"
+            type="radio"
             onChange={sundayChangeHandler}
           />
           <input
-            type="checkbox"
+            type="radio"
             onChange={mondayChangeHandler}
           />
           <input
-            type="checkbox"
+            type="radio"
             onChange={tuesdayChangeHandler}
           />
           <input
-            type="checkbox"
+            type="radio"
             onChange={wednesdayChangeHandler}
           />
           <input
-            type="checkbox"
+            type="radio"
             onChange={thursdayChangeHandler}
           />
           <input
-            type="checkbox"
+            type="radio"
             onChange={fridayChangeHandler}
           />
           <input
-            type="checkbox"
+            type="radio"
             onChange={saturdayChangeHandler}
           />
         </div>
