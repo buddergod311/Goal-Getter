@@ -15,12 +15,8 @@
   display: flex;
   justify-content: space-evenly;
 }
-.buttons {
-  display: flex;
-  justify-content: space-evenly;
-}
 
-.input input {
+.input input[type='text'] {
   font: inherit;
   display: block;
   width: 100%;
@@ -35,6 +31,20 @@
 }
 
 .submitButton {
+  margin-top: 15px;
   display: flex;
   justify-content: center;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.days div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }

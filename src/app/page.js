@@ -28,7 +28,7 @@ function Home() {
         <Title />
       </div>
       <footer>
-        <Hdr><Button onClick={example}>See an Example</Button></Hdr>
+        <Hdr><Button onClick={example}>See a Demo</Button></Hdr>
       </footer>
     </div>
   );
