@@ -1,0 +1,10 @@
+body, html {
+    background-color: lightgrey;
+    height: 100%;
+}
+.createForm {
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}

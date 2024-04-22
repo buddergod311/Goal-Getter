@@ -12,27 +12,26 @@ const GoalSchema = new mongoose.Schema({
         type: String,
     },
     sunday: {
-        type: Boolean, 
+        type: String, 
     },
     monday: {
-        type: Boolean, 
+        type: String, 
     },
     tuesday: {
-        type: Boolean, 
+        type: String, 
     },
     wednesday: {
-        type: Boolean, 
+        type: String, 
     },
     thursday: {
-        type: Boolean, 
+        type: String, 
     },
     friday: {
-        type: Boolean, 
+        type: String, 
     },
     saturday: {
-        type: Boolean, 
+        type: String, 
     },
-
 });
 
 module.exports = Goal = mongoose.model('Goal', GoalSchema);

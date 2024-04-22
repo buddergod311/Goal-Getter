@@ -1,13 +1,15 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8082;
 const mongoose = require('mongoose');
 const cors = require('cors');
 const goals = require('./routes/api/goals');
-
-app.use('/api/goals', goals);
+const users = require('./routes/api/users');
 
 app.use(cors({origin:true, credentials:true}));
+
+app.use('/api/users', users);
+app.use('/api/goals', goals);
 
 const conn_str = 'mongodb+srv://buddergod311:budder311@4300-project.eng7kr2.mongodb.net/?retryWrites=true&w=majority&appName=4300-Project';
 mongoose.set('strictQuery', false);

@@ -1,0 +1,20 @@
+.footerButton {
+    display: flex;
+    justify-content: center;
+}
+.footerButton Button {
+    margin-bottom: 30px;
+}
+body {
+    background-color:grey;
+}
+.daysHeader {
+    background-color: white;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-right: 35px;
+}
+.daysHeader p {
+    text-align: center;
+    margin: 20px;
+}
