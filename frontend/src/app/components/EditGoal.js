@@ -1,17 +1,34 @@
 import React from 'react';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Card from './Card';
 import Button from './Button';
 import './AddGoal.css';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
-const AddGoal = () => {
+const EditGoal = (props) => {
 
   const [name, setName] = useState('');
   const [img, setImg] = useState('');
   const [desc, setDesc] = useState('');
   const [days, setDays] = useState([false, false, false, false, false, false, false]);
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    let url = 'http://localhost:8082/api/goals/' + props.id;
+    axios
+      .get(url, {headers:{'auth-token':localStorage.getItem('auth-token')}})
+      .then((res) => {
+        setName(res.data.title);
+        setImg(res.data.image);
+        setDesc(res.data.description);
+        setDays([res.data.sunday, res.data.monday, res.data.tuesday, res.data.wednesday, res.data.thursday, res.data.friday, res.data.saturday]);
+        setLoading(false);
+     })
+     .catch((err) => {
+       console.log(err);
+     });
+  }, []);
 
   const nameChangeHandler = (event) => {
     setName(event.target.value);
@@ -69,7 +86,7 @@ const AddGoal = () => {
 
   const submitHandler = () => {
     const data = {
-      key: Math.random().toString(),
+      key: props.id,
       title: name,
       image: img,
       description: desc,
@@ -82,8 +99,9 @@ const AddGoal = () => {
       saturday: days[6],
     };
     if (name != '') {
+      let url = 'http://localhost:8082/api/goals/' + props.id;
       axios
-        .post('http://localhost:8082/api/goals', data, {headers:{'auth-token':localStorage.getItem('auth-token')}})
+        .put(url, data, {headers:{'auth-token':localStorage.getItem('auth-token')}})
         .then((res) => {
           setName('');
           setImg('');
@@ -93,13 +111,34 @@ const AddGoal = () => {
           router.push('/dashboard');
         })
         .catch((err) => {
-          console.log('Error in CreateGoal.');
+          console.log('Error in EditGoal.');
         });
 
     } else {
       alert('You must enter a name');
     }
   };
+
+  const deleteGoal = () => {
+    let url = 'http://localhost:8082/api/goals/' + props.id;
+    axios
+      .delete(url, {headers:{'auth-token':localStorage.getItem('auth-token')}})
+      .then((res) => {
+        setName('');
+        setImg('');
+        setDesc('');
+        setDays('');
+
+        router.push('/dashboard');
+      })
+      .catch((err) => {
+        console.log('Error in DeleteGoal.');
+      });
+  }
+
+  if (loading) {
+    return <div></div>;
+  }
 
   return (
     <Card className="input">
@@ -126,6 +165,7 @@ const AddGoal = () => {
           <div>
             <label>Sunday</label>
             <input
+              defaultChecked={days[0]}
               type="checkbox"
               onChange={sundayChangeHandler}
             />
@@ -133,6 +173,7 @@ const AddGoal = () => {
           <div>
             <label>Monday</label>
             <input
+              defaultChecked={days[1]}
               type="checkbox"
               onChange={mondayChangeHandler}
             />
@@ -140,6 +181,7 @@ const AddGoal = () => {
           <div>
             <label>Tuesday</label>
             <input
+              defaultChecked={days[2]}
               type="checkbox"
               onChange={tuesdayChangeHandler}
             />
@@ -147,6 +189,7 @@ const AddGoal = () => {
           <div>
             <label>Wednesday</label>
             <input
+              defaultChecked={days[3]}
               type="checkbox"
               onChange={wednesdayChangeHandler}
             />
@@ -154,6 +197,7 @@ const AddGoal = () => {
           <div>
             <label>Thursday</label>
             <input
+              defaultChecked={days[4]}
               type="checkbox"
               onChange={thursdayChangeHandler}
             />
@@ -161,6 +205,7 @@ const AddGoal = () => {
           <div>
             <label>Friday</label>
             <input
+              defaultChecked={days[5]}
               type="checkbox"
               onChange={fridayChangeHandler}
             />
@@ -168,17 +213,21 @@ const AddGoal = () => {
           <div>
             <label>Saturday</label>
             <input
+              defaultChecked={days[6]}
               type="checkbox"
               onChange={saturdayChangeHandler}
             />
           </div>
         </div>
         <div className='submitButton'>
-          <Button type="submit">Submit</Button>
+          <Button type="submit">Save Changes</Button>
         </div>
       </form>
+      <div className='submitButton'>
+          <Button onClick={deleteGoal}>Delete</Button>
+        </div>
     </Card>
   );
 };
 
-export default AddGoal;
+export default EditGoal;

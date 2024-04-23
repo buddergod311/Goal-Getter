@@ -11,7 +11,7 @@ body {
 .daysHeader {
     background-color: white;
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     margin-right: 35px;
 }
 .daysHeader p {

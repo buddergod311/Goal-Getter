@@ -12,25 +12,25 @@ const GoalSchema = new mongoose.Schema({
         type: String,
     },
     sunday: {
-        type: String, 
+        type: Boolean, 
     },
     monday: {
-        type: String, 
+        type: Boolean, 
     },
     tuesday: {
-        type: String, 
+        type: Boolean, 
     },
     wednesday: {
-        type: String, 
+        type: Boolean, 
     },
     thursday: {
-        type: String, 
+        type: Boolean, 
     },
     friday: {
-        type: String, 
+        type: Boolean, 
     },
     saturday: {
-        type: String, 
+        type: Boolean, 
     },
 });
 

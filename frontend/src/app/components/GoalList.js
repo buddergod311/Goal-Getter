@@ -8,6 +8,7 @@ const GoalList = (props) => {
       {props.items.map((goal) =>
         <Goal
           key={goal._id}
+          id={goal._id}
           img={goal.image}
           name={goal.title}
           desc={goal.description}
