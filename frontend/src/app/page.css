@@ -10,8 +10,17 @@ footer {
     width: 100%;
 }
 
-body {
+.linkText {
+    color:rgb(107, 230, 254);
+    font-size:medium;
+    text-decoration-line: underline;
+    font-weight:normal;
+}
+h3:hover {
+    font-weight:bold;
+}
 
+body {
     background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.formsbirds.com%2Fformhtml%2Fa48b0ecbc6a9c3da67eb%2Fprintadaffe402978813b83181%2Fbg1.png&f=1&nofb=1&ipt=d9e769cd1f929dd9b1d266363f47e219fbeb769c9bc71e38d5713b59f09cbfee&ipo=images');
     background-size: 1300px 700px;
 }

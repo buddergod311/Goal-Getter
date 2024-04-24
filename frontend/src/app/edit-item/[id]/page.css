@@ -8,3 +8,23 @@ body, html {
     flex-direction: column;
     align-items: center;
 }
+
+.submitChanges {
+    font: inherit;
+    border-color: #269d2a;
+    color: white;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    border-radius: 50px; 
+    margin-top: 10px;
+}
+
+.deleteGoal {
+    font: inherit;
+    border-color: #b52d2d;
+    color: white;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    border-radius: 50px; 
+    margin-top: 10px;
+}

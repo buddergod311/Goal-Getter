@@ -15,6 +15,7 @@ function Home() {
 
   const logOut = (event) => {
     event.preventDefault();
+    localStorage.removeItem('auth-token');
     router.push('./');
   }
 
@@ -36,7 +37,7 @@ function Home() {
 
   return (
     <div>
-      <Hdr><h1>Dashboard</h1> <Button onClick={logOut}>Log Out</Button></Hdr>
+      <Hdr><h1>{localStorage.getItem('username') + '\'s Dashboard'}</h1> <Button onClick={logOut}>Log Out</Button></Hdr>
       <Card>
         <div className='daysHeader'>
           <p></p>

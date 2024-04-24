@@ -1,7 +1,8 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import axios from 'axios';
 import UserContext from '../context/UserContext';
 import { useRouter } from 'next/navigation';
+import Button from './Button';
 
 const Signup = () => {
     const router = useRouter();
@@ -21,6 +22,11 @@ const Signup = () => {
         });
     };
 
+    const cancel = e => {
+        e.preventDefault();
+        router.push('/');
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -34,53 +40,45 @@ const Signup = () => {
                 user: loginRes.data.user,
             });
             localStorage.setItem('auth-token', loginRes.data.token);
-            router.push('/');
+            localStorage.setItem('username', loginRes.data.user.username);
+            router.push('/dashboard');
         } catch (error) {
-            console.error('Signup failed: ', error);
+            console.log(error);
         }
     };
 
     return (
-        <div>
+        <div className='login'>
             <form onSubmit={handleSubmit}>
-            <div>
-                <div>
                 <label>Email</label>
                 <input 
                     type='text' 
                     name='email'
                     onChange={handleChange} 
                 />
-                <div>
                 <label>Username</label>
                 <input
                     type='text'
                     name='username'
                     onChange={handleChange}
                 />
-                </div>
-                </div>
-                <div>
                 <label>Password</label>
                 <input
                     type='text'
                     name='password'
                     onChange={handleChange}
                 />
-                </div>
-                <div>
                 <label>Confirm Password</label>
                 <input
                     type='text'
                     name='confirmPassword'
                     onChange={handleChange}
                 />
-                </div>
-            </div>
             <div>
-                <button type='submit'>Sign Up</button>
+                <Button type='submit'>Sign Up</Button>
             </div>
             </form>
+            <Button onClick={cancel}>Cancel</Button>
         </div>
     )
 };

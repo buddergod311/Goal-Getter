@@ -16,7 +16,7 @@ const Goal = props => {
     return (    
         <li key={props.id} className="user-item">
         <div className='goal'>
-                <div className="user-info">
+                <div className="user-info user-info-border">
                     <img src={props.img} className="user-img" alt="" />
                     <br></br>
                     <h2>{props.name}</h2>

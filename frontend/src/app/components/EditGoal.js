@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react'
 import Card from './Card';
 import Button from './Button';
-import './AddGoal.css';
+import './EditGoal.css';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
@@ -220,11 +220,11 @@ const EditGoal = (props) => {
           </div>
         </div>
         <div className='submitButton'>
-          <Button type="submit">Save Changes</Button>
+          <button className='submitChanges' type="submit">Save Changes</button>
         </div>
       </form>
       <div className='submitButton'>
-          <Button onClick={deleteGoal}>Delete</Button>
+          <button className='deleteGoal' onClick={deleteGoal}>Delete</button>
         </div>
     </Card>
   );

@@ -4,3 +4,12 @@
     align-items: center;
     flex-direction: column;
 }
+
+h1 {
+    font-family: cursive;
+}
+
+p {
+    font-family: cursive;
+    font-size: medium;
+}

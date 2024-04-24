@@ -14,7 +14,12 @@ function Home() {
 
   const logIn = (event) => {
     event.preventDefault();
-    router.push('./dashboard');
+    router.push('./login');
+  }
+
+  const signUp = (event) => {
+    event.preventDefault();
+    router.push('./signup');
   }
 
   const example = (event) => {
@@ -25,13 +30,14 @@ function Home() {
   return (
     <UserProvider>
       <header>
-        <Hdr><h1>Goal Getter</h1><Button onClick={logIn}>Log In</Button></Hdr>
+        <Hdr>
+          <h1>Goal Getter</h1><Button onClick={logIn}>Log In</Button><br />
+          <h3 className='linkText' onClick={signUp}>Sign Up</h3>
+        </Hdr>
       </header>
       <div className='pageTitle'>
         <Title />
       </div>
-      <Login />
-      <Signup />
       <footer>
         <Hdr><Button onClick={example}>See a Demo</Button></Hdr>
       </footer>

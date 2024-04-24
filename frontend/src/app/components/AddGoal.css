@@ -11,11 +11,6 @@
   margin-bottom: 0.5rem;
 }
 
-.days {
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .input input[type='text'] {
   font: inherit;
   display: block;
@@ -47,4 +42,10 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+}
+
+.card.input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

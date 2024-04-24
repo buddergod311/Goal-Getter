@@ -100,6 +100,10 @@ const AddGoal = () => {
       alert('You must enter a name');
     }
   };
+  const cancel = (event) => {
+    event.preventDefault();
+    router.push('/dashboard');
+  }
 
   return (
     <Card className="input">
@@ -177,6 +181,7 @@ const AddGoal = () => {
           <Button type="submit">Submit</Button>
         </div>
       </form>
+      <Button onClick={cancel}>Cancel</Button>
     </Card>
   );
 };
